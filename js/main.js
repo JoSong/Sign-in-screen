@@ -9,18 +9,24 @@ $('.close').on('click',function(e){
 $('.modal').fadeOut();
 });
 
-$('.submit').on('click',function(e){
 
-	$('input').addClass('error');
+
+$('.submit').focus(function(e){
+
+if($('input').val() =="")
+{
+	$('input').addClass('error')
+}
 
 });
 
-$('input').on('mouseover',function(e){
+$('input').keydown(function(e){
 
-	$(this).removeClass('error')
-});
+	if($('input').val() !== "")
+	{
+		
+		$('input').removeClass('error')
+	}
 
-$('.modal').on('click',function(e){
 
-	$(this).fadeOut();
 });
